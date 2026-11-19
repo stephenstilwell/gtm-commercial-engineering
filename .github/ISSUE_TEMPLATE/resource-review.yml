@@ -1,5 +1,5 @@
 name: Resource review
-description: Record a quarterly review or investigate an outdated source.
+description: Report outdated information or record a quarterly source review.
 title: '[Review] '
 body:
   - type: input

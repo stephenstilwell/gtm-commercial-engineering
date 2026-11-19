@@ -11,3 +11,6 @@ Apply these standards to every change in this repository.
 - Run the lab tests and strict docs build before requesting review. Document tutorial commands from the repository root and include expected results. Add a targeted regression test when changing lab behavior.
 - Use relative links inside the repository. Keep MkDocs navigation, README, and roadmap synchronized. Verify Mermaid rendering in GitHub and MkDocs.
 - Follow the [resource review procedure](docs/resource-review.md) for changed external references.
+- Use [catalog.json](catalog/catalog.json) as the source of truth for tool and learning entries. Regenerate both Markdown views with `python scripts/catalog.py` and run `python scripts/catalog.py --check` during verification.
+- For catalog claims, manually review license scope, edition boundaries, price basis, status evidence, and fit with the linked exercise. An HTTP success or GitHub license label cannot establish those claims by itself.
+- Label established practice, emerging capability, and hypotheses in research. Give experimental protocols a baseline, observable outcome, disconfirming criterion, and reproduction instructions.

@@ -1,0 +1,121 @@
+/* Useful in Practice publication palette. Theme settings keep search and navigation native. */
+:root {
+  --uip-burgundy: #780000;
+  --uip-red: #c1121f;
+  --uip-paper: #fdf0d5;
+  --uip-ink: #003049;
+  --uip-blue: #669bbc;
+  --uip-display: Georgia, "Times New Roman", serif;
+  --md-text-font: system-ui, sans-serif;
+  --md-code-font: ui-monospace, "Cascadia Code", Consolas, monospace;
+}
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: var(--uip-burgundy);
+  --md-primary-bg-color: white;
+  --md-accent-fg-color: var(--uip-red);
+  --md-typeset-a-color: var(--uip-burgundy);
+  --md-default-bg-color: #fffcf5;
+  --md-default-fg-color: var(--uip-ink);
+  --md-default-fg-color--light: #345263;
+  --uip-panel: var(--uip-paper);
+  --uip-border: #ab8a72;
+  --uip-focus: var(--uip-ink);
+  --uip-header-focus: var(--uip-paper);
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: var(--uip-ink);
+  --md-primary-bg-color: var(--uip-paper);
+  --md-accent-fg-color: #f6beba;
+  --md-typeset-a-color: #afd3e8;
+  --md-default-bg-color: #13232e;
+  --md-default-fg-color: #fff6e4;
+  --md-default-fg-color--light: #d4dde1;
+  --uip-panel: #1a3443;
+  --uip-border: var(--uip-blue);
+  --uip-focus: var(--uip-paper);
+  --uip-header-focus: var(--uip-paper);
+}
+
+.md-header,
+.md-tabs {
+  box-shadow: none;
+}
+
+.md-header__title,
+.md-tabs__link {
+  font-weight: 650;
+}
+
+.md-typeset h1,
+.md-typeset h2 {
+  color: var(--md-default-fg-color);
+  font-family: var(--uip-display);
+  letter-spacing: -0.025em;
+}
+
+.md-typeset h1 {
+  font-size: clamp(1.9rem, 4.2vw, 3.2rem);
+  line-height: 1.12;
+  margin-bottom: 0.65em;
+  overflow-wrap: anywhere;
+}
+
+.md-typeset h2 {
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.md-typeset p,
+.md-typeset li {
+  line-height: 1.65;
+}
+
+.md-typeset p > a,
+.md-typeset li > a,
+.md-typeset td > a,
+.md-typeset .handbook-paths a {
+  text-decoration: underline;
+  text-decoration-thickness: 0.07em;
+  text-underline-offset: 0.18em;
+}
+
+.md-typeset pre > code {
+  border-left: 0.16rem solid var(--uip-blue);
+}
+
+.md-typeset .grid.cards.handbook-paths {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.md-typeset .grid.cards.handbook-paths > ul > li {
+  background: var(--uip-panel);
+  border: 1px solid var(--uip-border);
+  border-radius: 0.2rem;
+  padding: 0.95rem 1rem;
+}
+
+.md-typeset .handbook-paths li strong {
+  display: block;
+  font-family: var(--uip-display);
+  font-size: 1.2rem;
+}
+
+.md-container :focus-visible,
+.md-header :focus-visible {
+  outline: 2px solid var(--uip-focus);
+  outline-offset: 0.16rem;
+}
+
+.md-header :focus-visible,
+.md-tabs :focus-visible,
+.md-footer :focus-visible {
+  outline-color: var(--uip-header-focus);
+}
+
+@media screen and (max-width: 38rem) {
+  .md-typeset .grid.cards.handbook-paths {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

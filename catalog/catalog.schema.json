@@ -1,0 +1,324 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GTM Commercial Engineering resource catalog",
+  "type": "object",
+  "required": [
+    "version",
+    "entries"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/entry"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "category",
+        "kind",
+        "organization",
+        "problem",
+        "official_url",
+        "difficulty",
+        "cost",
+        "classification",
+        "maintenance",
+        "reviewed_on",
+        "guide"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "maxLength": 70
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500,
+          "pattern": "\\S"
+        },
+        "category": {
+          "enum": [
+            "GTM platforms",
+            "Prospect and company research",
+            "Data enrichment and validation",
+            "CRM systems",
+            "Sales engagement and outreach",
+            "AI agents and coding agents",
+            "Workflow automation",
+            "Revenue analytics",
+            "Customer lifecycle systems",
+            "Libraries and CLIs",
+            "Agent skills",
+            "Templates and playbooks",
+            "Technical communities",
+            "Researchers and educators",
+            "Courses",
+            "Newsletters",
+            "Official documentation"
+          ]
+        },
+        "kind": {
+          "enum": [
+            "software",
+            "learning"
+          ]
+        },
+        "organization": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500,
+          "pattern": "\\S"
+        },
+        "problem": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500,
+          "pattern": "\\S"
+        },
+        "official_url": {
+          "type": "string",
+          "pattern": "^https://[^\\s<>]+$",
+          "maxLength": 500
+        },
+        "repository_url": {
+          "type": "string",
+          "pattern": "^https://[^\\s<>]+$",
+          "maxLength": 500
+        },
+        "difficulty": {
+          "enum": [
+            "Beginner",
+            "Intermediate",
+            "Advanced"
+          ]
+        },
+        "cost": {
+          "type": "object",
+          "required": [
+            "model",
+            "note",
+            "source"
+          ],
+          "properties": {
+            "model": {
+              "enum": [
+                "Free",
+                "Freemium",
+                "Paid"
+              ]
+            },
+            "note": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500,
+              "pattern": "\\S"
+            },
+            "source": {
+              "type": "string",
+              "pattern": "^https://[^\\s<>]+$",
+              "maxLength": 500
+            }
+          },
+          "additionalProperties": false
+        },
+        "classification": {
+          "enum": [
+            "open-source",
+            "source-available",
+            "mixed-license",
+            "proprietary",
+            "learning-resource"
+          ]
+        },
+        "license": {
+          "type": "object",
+          "required": [
+            "name",
+            "scope",
+            "source"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500,
+              "pattern": "\\S"
+            },
+            "scope": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500,
+              "pattern": "\\S"
+            },
+            "source": {
+              "type": "string",
+              "pattern": "^https://[^\\s<>]+$",
+              "maxLength": 500
+            },
+            "osi_source": {
+              "type": "string",
+              "pattern": "^https://[^\\s<>]+$",
+              "maxLength": 500
+            }
+          },
+          "additionalProperties": false
+        },
+        "maintenance": {
+          "type": "object",
+          "required": [
+            "status",
+            "source"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "Recent repository activity",
+                "Currently offered",
+                "Published reference"
+              ]
+            },
+            "source": {
+              "type": "string",
+              "pattern": "^https://[^\\s<>]+$",
+              "maxLength": 500
+            },
+            "observed_on": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          "additionalProperties": false
+        },
+        "reviewed_on": {
+          "type": "string",
+          "format": "date"
+        },
+        "guide": {
+          "type": "string",
+          "pattern": "^(?:[a-z0-9-]+/)*[a-z0-9-]+\\.md$"
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "software"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "classification": {
+                "enum": [
+                  "open-source",
+                  "source-available",
+                  "mixed-license",
+                  "proprietary"
+                ]
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "classification": {
+                "const": "learning-resource"
+              },
+              "category": {
+                "enum": [
+                  "Templates and playbooks",
+                  "Technical communities",
+                  "Researchers and educators",
+                  "Courses",
+                  "Newsletters",
+                  "Official documentation"
+                ]
+              }
+            },
+            "not": {
+              "required": [
+                "license"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "classification": {
+                "enum": [
+                  "open-source",
+                  "source-available",
+                  "mixed-license"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "repository_url",
+              "license"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "classification": {
+                "const": "open-source"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "license": {
+                "required": [
+                  "osi_source"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "maintenance": {
+                "properties": {
+                  "status": {
+                    "const": "Recent repository activity"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "repository_url"
+            ],
+            "properties": {
+              "maintenance": {
+                "required": [
+                  "observed_on"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
