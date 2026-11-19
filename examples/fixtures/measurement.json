@@ -1,0 +1,42 @@
+[
+  {
+    "account_id": "trial-account-1",
+    "group": "treatment",
+    "converted": true
+  },
+  {
+    "account_id": "trial-account-2",
+    "group": "treatment",
+    "converted": true
+  },
+  {
+    "account_id": "trial-account-3",
+    "group": "treatment",
+    "converted": false
+  },
+  {
+    "account_id": "trial-account-4",
+    "group": "treatment",
+    "converted": false
+  },
+  {
+    "account_id": "trial-account-5",
+    "group": "control",
+    "converted": true
+  },
+  {
+    "account_id": "trial-account-6",
+    "group": "control",
+    "converted": false
+  },
+  {
+    "account_id": "trial-account-7",
+    "group": "control",
+    "converted": false
+  },
+  {
+    "account_id": "trial-account-8",
+    "group": "control",
+    "converted": false
+  }
+]

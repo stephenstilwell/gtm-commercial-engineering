@@ -1,0 +1,6 @@
+# These two pages opened during editorial review but returned HTTP 403 to Lychee.
+# Revisit the exact URL exceptions during quarterly source review.
+exclude = [
+  '^https://university\.clay\.com/docs/building-a-data-waterfall$',
+  '^https://www\.sec\.gov/search-filings/edgar-application-programming-interfaces$',
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "monthly-usd",
+    "product_id": "synthetic-catalog-access",
+    "price_version": "2026-11-01",
+    "billing_period": "month",
+    "currency": "USD",
+    "amount_minor": 2900,
+    "expires_at": "2026-12-01T00:00:00Z",
+    "terms_url": "https://catalog.example/terms/monthly"
+  },
+  {
+    "id": "annual-eur",
+    "product_id": "synthetic-catalog-access",
+    "price_version": "2026-11-01",
+    "billing_period": "year",
+    "currency": "EUR",
+    "amount_minor": 29000,
+    "expires_at": "2026-11-01T00:00:00Z",
+    "terms_url": ""
+  }
+]

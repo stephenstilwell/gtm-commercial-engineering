@@ -1,0 +1,60 @@
+site_name: GTM Commercial Engineering
+site_description: An open field guide to building reliable commercial systems.
+site_author: Useful in Practice and contributors
+site_url: !ENV SITE_URL
+
+theme:
+  name: material
+  font: false
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search
+
+markdown_extensions:
+  - tables
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+validation:
+  links:
+    not_found: warn
+    anchors: warn
+
+nav:
+  - Home: index.md
+  - Start learning:
+      - Learning roadmap: roadmap.md
+      - Offline labs: labs.md
+      - Operational checklists: checklists.md
+  - Commercial systems:
+      - GTM engineering fundamentals: fundamentals.md
+      - Revenue operations architecture: revops.md
+      - CRM data models and enrichment: crm.md
+  - Workflow engineering:
+      - Buying signals and event-driven workflows: signals.md
+      - n8n, Clay, Apollo, and HubSpot: workflows.md
+      - Customer lifecycle engineering: lifecycle.md
+  - Intelligence:
+      - Partnership intelligence: partnerships.md
+      - Product-market intelligence: product-market.md
+      - Vertical opportunity intelligence: verticals.md
+  - AI and commerce:
+      - AI agents for business operations: agents.md
+      - Agentic commerce and AI buyer readiness: commerce.md
+  - Operating controls:
+      - Security, compliance, and data governance: governance.md
+      - Measurement, experimentation, and ROI: measurement.md
+  - References:
+      - Primary sources: resources.md
+      - Resource review: resource-review.md

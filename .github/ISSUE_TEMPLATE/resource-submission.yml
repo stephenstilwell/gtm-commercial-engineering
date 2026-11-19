@@ -1,0 +1,36 @@
+name: Resource submission
+description: Propose a primary source for the field guide.
+title: '[Resource] '
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Canonical URL
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: publisher
+    attributes:
+      label: Title, publisher, and version
+    validations:
+      required: true
+  - type: textarea
+    id: relevance
+    attributes:
+      label: Chapter and learner task
+      description: Name the chapter and the specific claim or exercise this source supports.
+    validations:
+      required: true
+  - type: input
+    id: checked
+    attributes:
+      label: Date last opened
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Access, licensing, or attribution constraints
+      description: Mention any login, plan, or reuse restrictions you observed.

@@ -1,0 +1,23 @@
+name: Resource review
+description: Record a quarterly review or investigate an outdated source.
+title: '[Review] '
+body:
+  - type: input
+    id: scope
+    attributes:
+      label: Review date or triggering event
+      description: Include the quarter, CI run, or upstream change.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources and affected guides
+      description: List URLs, last successful checks, and the affected learner tasks.
+    validations:
+      required: true
+  - type: textarea
+    id: outcomes
+    attributes:
+      label: Findings and dispositions
+      description: Record the publisher, check date, keep or replace decision, example verification, and owner for follow-up.

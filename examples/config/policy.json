@@ -1,0 +1,22 @@
+{
+  "as_of": "2026-11-19T15:00:00Z",
+  "max_signal_age_hours": 72,
+  "max_evidence_age_days": 30,
+  "routing_actions": {
+    "demo.requested": "review_demo_request",
+    "onboarding.milestone_due": "review_onboarding_milestone"
+  },
+  "supported_currencies": [
+    "USD",
+    "EUR"
+  ],
+  "supported_billing_periods": [
+    "month",
+    "year"
+  ],
+  "measurement": {
+    "currency": "USD",
+    "contribution_per_conversion_minor": 20000,
+    "workflow_cost_minor": 10000
+  }
+}

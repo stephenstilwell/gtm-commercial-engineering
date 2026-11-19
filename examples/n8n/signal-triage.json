@@ -1,0 +1,48 @@
+{
+  "name": "GTM lab - signal triage",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "4f32440f-7d5d-47d0-9c4d-9dd643e8cb0f",
+      "name": "When clicking ‘Execute workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "// Synthetic inputs. The Set applies only to this execution.\nconst accounts = new Map([\n  [\"account-101\", { owner: \"inbound-queue\", suppressed: false }],\n  [\"account-202\", { owner: \"inbound-queue\", suppressed: true }],\n  [\"account-303\", { owner: null, suppressed: false }],\n]);\nconst signals = [\n  { id: \"demo-101\", subject: \"account-101\" },\n  { id: \"demo-101\", subject: \"account-101\" },\n  { id: \"demo-202\", subject: \"account-202\" },\n  { id: \"demo-303\", subject: \"account-303\" },\n];\nconst source = \"urn:useful-in-practice:demo-form\";\nconst seen = new Set();\n\nreturn signals.map((signal) => {\n  const key = JSON.stringify([source, signal.id]);\n  const account = accounts.get(signal.subject);\n  let decision;\n  if (seen.has(key)) {\n    decision = \"duplicate\";\n  } else if (account?.suppressed) {\n    decision = \"blocked\";\n  } else if (!account?.owner) {\n    decision = \"manual_review\";\n  } else {\n    decision = \"route_review_task\";\n  }\n  seen.add(key);\n  return {\n    json: {\n      ...signal,\n      source,\n      decision,\n      owner: decision === \"route_review_task\" ? account.owner : null,\n    },\n  };\n});"
+      },
+      "id": "62cd4e48-40eb-46d0-9ea2-e003c753fd75",
+      "name": "Decide Task Proposals",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        260,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Decide Task Proposals",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

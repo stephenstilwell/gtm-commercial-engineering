@@ -1,0 +1,75 @@
+{
+  "evidence": [
+    {
+      "id": "integration-spec",
+      "subject": "synthetic-integration",
+      "verdict": "supports",
+      "retrieved_at": "2026-11-12T00:00:00Z",
+      "source_url": "https://evidence.example/integration-spec",
+      "notes": "A synthetic capability note describes an API for the target handoff."
+    },
+    {
+      "id": "discovery-old",
+      "subject": "synthetic-vertical",
+      "verdict": "supports",
+      "retrieved_at": "2026-08-01T00:00:00Z",
+      "source_url": "https://evidence.example/discovery-old",
+      "notes": "An older synthetic interview describes a manual reconciliation step."
+    },
+    {
+      "id": "workflow-interview",
+      "subject": "synthetic-product",
+      "verdict": "supports",
+      "retrieved_at": "2026-11-14T00:00:00Z",
+      "source_url": "https://evidence.example/workflow-interview",
+      "notes": "A synthetic interview reports recurring manual reconciliation."
+    },
+    {
+      "id": "usage-audit",
+      "subject": "synthetic-product",
+      "verdict": "contradicts",
+      "retrieved_at": "2026-11-15T00:00:00Z",
+      "source_url": "https://evidence.example/usage-audit",
+      "notes": "A synthetic audit finds the same work is already automated for this segment."
+    }
+  ],
+  "proposals": [
+    {
+      "id": "partner-review",
+      "subject": "synthetic-integration",
+      "claim": "An integration could support the handoff.",
+      "proposed_action": "Review integration feasibility.",
+      "evidence_ids": [
+        "integration-spec"
+      ]
+    },
+    {
+      "id": "vertical-review",
+      "subject": "synthetic-vertical",
+      "claim": "The segment has a recurring manual reconciliation step.",
+      "proposed_action": "Schedule discovery review.",
+      "evidence_ids": [
+        "discovery-old"
+      ]
+    },
+    {
+      "id": "product-market-review",
+      "subject": "synthetic-product",
+      "claim": "This segment still reconciles these records manually.",
+      "proposed_action": "Review the feature hypothesis.",
+      "evidence_ids": [
+        "workflow-interview",
+        "usage-audit"
+      ]
+    },
+    {
+      "id": "agent-draft",
+      "subject": "synthetic-account",
+      "claim": "The account asked for implementation support.",
+      "proposed_action": "Review an onboarding brief.",
+      "evidence_ids": [
+        "missing-note"
+      ]
+    }
+  ]
+}

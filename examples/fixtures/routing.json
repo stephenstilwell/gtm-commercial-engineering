@@ -1,0 +1,86 @@
+{
+  "accounts": [
+    {
+      "id": "account-101",
+      "crm_company_id": "synthetic-101",
+      "owner": "inbound-queue",
+      "suppressed": false
+    },
+    {
+      "id": "account-202",
+      "crm_company_id": "synthetic-202",
+      "owner": "inbound-queue",
+      "suppressed": true
+    },
+    {
+      "id": "account-303",
+      "crm_company_id": "synthetic-303",
+      "owner": null,
+      "suppressed": false
+    },
+    {
+      "id": "account-404",
+      "crm_company_id": "synthetic-404",
+      "owner": "onboarding-queue",
+      "suppressed": false
+    }
+  ],
+  "deliveries": [
+    {
+      "specversion": "1.0",
+      "id": "demo-101",
+      "source": "urn:useful-in-practice:demo-form",
+      "type": "demo.requested",
+      "subject": "account-101",
+      "time": "2026-11-19T13:10:00Z"
+    },
+    {
+      "specversion": "1.0",
+      "id": "demo-101",
+      "source": "urn:useful-in-practice:demo-form",
+      "type": "demo.requested",
+      "subject": "account-101",
+      "time": "2026-11-19T13:10:00Z"
+    },
+    {
+      "specversion": "1.0",
+      "id": "demo-202",
+      "source": "urn:useful-in-practice:demo-form",
+      "type": "demo.requested",
+      "subject": "account-202",
+      "time": "2026-11-19T13:20:00Z"
+    },
+    {
+      "specversion": "1.0",
+      "id": "demo-303",
+      "source": "urn:useful-in-practice:demo-form",
+      "type": "demo.requested",
+      "subject": "account-303",
+      "time": "2026-11-19T13:22:00Z"
+    },
+    {
+      "specversion": "1.0",
+      "id": "demo-old",
+      "source": "urn:useful-in-practice:demo-form",
+      "type": "demo.requested",
+      "subject": "account-101",
+      "time": "2026-11-01T13:10:00Z"
+    },
+    {
+      "specversion": "1.0",
+      "id": "milestone-404",
+      "source": "urn:useful-in-practice:milestone-scheduler",
+      "type": "onboarding.milestone_due",
+      "subject": "account-404",
+      "time": "2026-11-19T14:00:00Z"
+    },
+    {
+      "specversion": "1.0",
+      "id": "demo-999",
+      "source": "urn:useful-in-practice:demo-form",
+      "type": "demo.requested",
+      "subject": "account-999",
+      "time": "2026-11-19T14:01:00Z"
+    }
+  ]
+}
