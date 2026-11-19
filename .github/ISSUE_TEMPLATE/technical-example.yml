@@ -1,0 +1,25 @@
+name: Technical example request
+description: Request a runnable example for a commercial engineering problem.
+title: '[Example] '
+body:
+  - type: textarea
+    id: business_problem
+    attributes:
+      label: Business problem and success criteria
+      description: Describe the input, decision, downstream actor, and desired observable outcome.
+    validations:
+      required: true
+  - type: textarea
+    id: contract
+    attributes:
+      label: Synthetic input and output contract
+      description: Sketch the event or record shape and the expected output. Use fictional data.
+    validations:
+      required: true
+  - type: textarea
+    id: failures
+    attributes:
+      label: Failure, recovery, and verification
+      description: Include a failure to reproduce, its expected recovery, and a test that demonstrates it.
+    validations:
+      required: true

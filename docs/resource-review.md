@@ -1,6 +1,6 @@
 # Resource review
 
-The repository maintainer owns the review cadence and can assign sources to contributors. Review the index once per calendar quarter and sooner after a vendor deprecation, breaking tool change, or scheduled CI link failure.
+The repository maintainer owns the review cadence and can assign sources to contributors. Review the citation index and resource catalog once per calendar quarter and sooner after a license change, vendor deprecation, breaking tool change, or scheduled CI link failure.
 
 1. **Open a review issue.** Select **Resource review** and include affected guides, recent CI results, or upstream notices.
 2. **Check access and meaning.** Open the URL and confirm the publisher and relevant passage. Inspect redirects, scopes, plan changes, publication dates, and replaced versions.
@@ -9,6 +9,13 @@ The repository maintainer owns the review cadence and can assign sources to cont
 5. **Close with evidence.** Link the merged update. Give deferred items an owner and follow-up date.
 
 Automated HTTP checks test reachability. Editors verify that the source still supports the guide.
+
+## Review a catalog entry
+
+1. Inspect the exact upstream license file and the OSI listing for open-source entries. Check enterprise directories, separately licensed components, and hosted edition terms before updating classification. Record the boundary in the entry.
+2. Open the official pricing or access page, confirm the relevant edition and status, and check public repository activity where available. Treat archived or unconfirmed entries as review decisions. Remove an entry from the curated catalog when there is no longer evidence it is useful and available.
+3. Verify that the linked handbook exercise matches the entry’s job. Replace any vendor claim that depends on access you could not confirm with a narrower description.
+4. Update the catalog JSON, date the successful review, and regenerate the views with `python scripts/catalog.py`. Review the underlying sources and the rendered result in the pull request.
 
 ## Manual link checks
 

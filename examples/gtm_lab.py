@@ -5,6 +5,7 @@ from collections import Counter
 from contextlib import closing
 from datetime import datetime, timedelta
 from fractions import Fraction
+from hashlib import sha256
 import json
 from pathlib import Path
 import re
@@ -81,6 +82,7 @@ def routing(data, policy):
     actions = policy["routing_actions"]
     deliveries = data["deliveries"]
     duplicates = 0
+    payload_conflicts = []
 
     with closing(sqlite3.connect(":memory:")) as db:
         db.row_factory = sqlite3.Row
@@ -89,6 +91,7 @@ def routing(data, policy):
             CREATE TABLE decisions (
                 source TEXT NOT NULL, event_id TEXT NOT NULL,
                 account_id TEXT NOT NULL, decision TEXT NOT NULL, reason TEXT NOT NULL,
+                fingerprint TEXT NOT NULL,
                 PRIMARY KEY (source, event_id)
             );
             CREATE TABLE tasks (
@@ -103,13 +106,25 @@ def routing(data, policy):
             account = accounts.get(event["subject"])
             decision, reason = routing_decision(event, account, actions, age, max_age)
             key = (event["source"], event["id"])
+            payload = json.dumps(event, sort_keys=True, separators=(",", ":"), allow_nan=False)
+            fingerprint = sha256(payload.encode("utf-8")).hexdigest()
             with db:
                 cursor = db.execute("""
-                    INSERT INTO decisions VALUES (?, ?, ?, ?, ?)
+                    INSERT INTO decisions VALUES (?, ?, ?, ?, ?, ?)
                     ON CONFLICT (source, event_id) DO NOTHING
-                """, (*key, event["subject"], decision, reason))
+                """, (*key, event["subject"], decision, reason, fingerprint))
                 if cursor.rowcount == 0:
-                    duplicates += 1
+                    original = db.execute("""
+                        SELECT fingerprint FROM decisions WHERE source = ? AND event_id = ?
+                    """, key).fetchone()["fingerprint"]
+                    if original == fingerprint:
+                        duplicates += 1
+                    else:
+                        payload_conflicts.append({
+                            "source": event["source"],
+                            "event_id": event["id"],
+                            "reason": "event_identity_reused",
+                        })
                 elif decision == "proposed":
                     db.execute("INSERT INTO tasks VALUES (?, ?, ?, ?, ?)", (
                         *key, actions[event["type"]], account["crm_company_id"], account["owner"]
@@ -118,7 +133,11 @@ def routing(data, policy):
         return {
             "deliveries": len(deliveries),
             "duplicates": duplicates,
-            "decisions": [dict(row) for row in db.execute("SELECT * FROM decisions ORDER BY rowid")],
+            "payload_conflicts": payload_conflicts,
+            "decisions": [dict(row) for row in db.execute("""
+                SELECT source, event_id, account_id, decision, reason
+                FROM decisions ORDER BY rowid
+            """)],
             "tasks": [dict(row) for row in db.execute("SELECT * FROM tasks ORDER BY rowid")],
         }
 

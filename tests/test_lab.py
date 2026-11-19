@@ -22,6 +22,7 @@ class LabTests(unittest.TestCase):
         data = self.fixture("routing")
         result = lab.routing(data, self.policy)
         self.assertEqual((result["deliveries"], result["duplicates"]), (7, 1))
+        self.assertEqual(result["payload_conflicts"], [])
         self.assertEqual(len(result["decisions"]), 6)
         self.assertEqual(
             [task["action"] for task in result["tasks"]],
@@ -44,6 +45,24 @@ class LabTests(unittest.TestCase):
         result = lab.routing(data, self.policy)
         self.assertEqual(result["duplicates"], 1)
         self.assertEqual(len(result["tasks"]), 3)
+
+    def test_changed_payload_for_the_same_identity_is_reported_and_held(self):
+        data = self.fixture("routing")
+        baseline = lab.routing(data, self.policy)
+        first = data["deliveries"][0]
+        data["deliveries"].append(dict(reversed(list(first.items()))))
+        data["deliveries"].append({**first, "subject": "account-404"})
+
+        result = lab.routing(data, self.policy)
+
+        self.assertEqual(result["duplicates"], baseline["duplicates"] + 1)
+        self.assertEqual(result["tasks"], baseline["tasks"])
+        self.assertEqual(result["decisions"], baseline["decisions"])
+        self.assertEqual(result["payload_conflicts"], [{
+            "source": first["source"],
+            "event_id": first["id"],
+            "reason": "event_identity_reused",
+        }])
 
     def test_missing_suppression_or_crm_identity_holds_tasks(self):
         data = self.fixture("routing")

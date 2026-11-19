@@ -1,0 +1,30 @@
+name: Open-source project submission
+description: Propose a specific software repository or distribution with primary license evidence.
+title: '[Project] '
+body:
+  - type: input
+    id: repository
+    attributes:
+      label: Public repository URL
+    validations:
+      required: true
+  - type: textarea
+    id: license
+    attributes:
+      label: License and edition boundaries
+      description: Link the exact license file, the OSI listing where applicable, and any separate enterprise or component terms.
+    validations:
+      required: true
+  - type: textarea
+    id: fit
+    attributes:
+      label: Problem, catalog category, cost, and handbook exercise
+      description: Explain what the reviewed distribution helps a practitioner do. Include pricing or availability evidence.
+    validations:
+      required: true
+  - type: input
+    id: activity
+    attributes:
+      label: Maintenance evidence and date checked
+    validations:
+      required: true

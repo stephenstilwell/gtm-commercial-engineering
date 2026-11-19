@@ -1,0 +1,25 @@
+name: Tutorial proposal
+description: Propose a teaching walkthrough with a verifiable learner outcome.
+title: '[Tutorial] '
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Learner, prerequisites, and outcome
+      description: Name the handbook path and what the learner will be able to build or explain.
+    validations:
+      required: true
+  - type: textarea
+    id: exercise
+    attributes:
+      label: Exercise and expected behavior
+      description: Include proposed inputs, commands, expected output, and a failure worth testing.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Primary references and verification plan
+      description: Identify source evidence and any steps that require a test account.
+    validations:
+      required: true

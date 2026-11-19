@@ -1,0 +1,575 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "clay",
+      "name": "Clay",
+      "category": "GTM platforms",
+      "kind": "software",
+      "organization": "Clay",
+      "problem": "Combine account research and enrichment into reviewable rows before handing approved records to a workflow.",
+      "official_url": "https://www.clay.com/pricing",
+      "difficulty": "Intermediate",
+      "cost": {
+        "model": "Freemium",
+        "note": "Free and paid plans have different allowances and feature access.",
+        "source": "https://www.clay.com/pricing"
+      },
+      "classification": "proprietary",
+      "maintenance": {
+        "status": "Currently offered",
+        "source": "https://www.clay.com/pricing"
+      },
+      "reviewed_on": "2026-11-19",
+      "guide": "workflows.md"
+    },
+    {
+      "id": "apollo",
+      "name": "Apollo",
+      "category": "Prospect and company research",
+      "kind": "software",
+      "organization": "Apollo.io",
+      "problem": "Find candidate companies and people for an approved research scope, then verify identity before enrichment or contact.",
+      "official_url": "https://www.apollo.io/pricing",
+      "difficulty": "Intermediate",
+      "cost": {
+        "model": "Freemium",
+        "note": "A free plan exists. API access, credits, and enrichment capabilities depend on the account.",
+        "source": "https://www.apollo.io/pricing"
+      },
+      "classification": "proprietary",
+      "maintenance": {
+        "status": "Currently offered",
+        "source": "https://www.apollo.io/pricing"
+      },
+      "reviewed_on": "2026-11-19",
+      "guide": "workflows.md"
+    },
+    {
+      "id": "gtm-signal-lab",
+      "name": "GTM Signal Lab",
+      "category": "Prospect and company research",
+      "kind": "software",
+      "organization": "Useful in Practice",
+      "problem": "Inspect public or imported company signals and see why a scoring profile proposes a follow-up. Start with its synthetic demo.",
+      "official_url": "https://github.com/stephenstilwell/gtm-signal-lab",
+      "difficulty": "Intermediate",
+      "cost": {
+        "model": "Free",
+        "note": "Repository and synthetic demo. Live collection has separate source and hosting requirements.",
+        "source": "https://github.com/stephenstilwell/gtm-signal-lab"
+      },
+      "classification": "open-source",
+      "repository_url": "https://github.com/stephenstilwell/gtm-signal-lab",
+      "license": {
+        "name": "MIT",
+        "scope": "Repository code. Public sources retain their own terms.",
+        "source": "https://github.com/stephenstilwell/gtm-signal-lab/blob/main/LICENSE",
+        "osi_source": "https://opensource.org/license/mit"
+      },
+      "maintenance": {
+        "status": "Recent repository activity",
+        "source": "https://github.com/stephenstilwell/gtm-signal-lab",
+        "observed_on": "2026-11-19"
+      },
+      "reviewed_on": "2026-11-19",
+      "guide": "build/routing.md"
+    },
+    {
+      "id": "pydantic",
+      "name": "Pydantic",
+      "category": "Data enrichment and validation",
+      "kind": "software",
+      "organization": "Pydantic",
+      "problem": "Validate a candidate record at an ingestion boundary before it can enter a CRM or agent workflow.",
+      "official_url": "https://github.com/pydantic/pydantic",
+      "difficulty": "Intermediate",
+      "cost": {
+        "model": "Free",
+        "note": "The Python validation library.",
+        "source": "https://github.com/pydantic/pydantic"
+      },
+      "classification": "open-source",
+      "repository_url": "https://github.com/pydantic/pydantic",
+      "license": {
+        "name": "MIT",
+        "scope": "Python library in the public repository.",
+        "source": "https://github.com/pydantic/pydantic/blob/main/LICENSE",
+        "osi_source": "https://opensource.org/license/mit"
+      },
+      "maintenance": {
+        "status": "Recent repository activity",
+        "source": "https://github.com/pydantic/pydantic",
+        "observed_on": "2026-11-19"
+      },
+      "reviewed_on": "2026-11-19",
+      "guide": "crm.md"
+    },
+    {
+      "id": "suitecrm",
+      "name": "SuiteCRM",
+      "category": "CRM systems",
+      "kind": "software",
+      "organization": "SuiteCRM project",
+      "problem": "Model accounts and sales work in a self-hosted CRM while keeping operational administration within your team.",
+      "official_url": "https://github.com/SuiteCRM/SuiteCRM",
+      "difficulty": "Intermediate",
+      "cost": {
+        "model": "Free",
+        "note": "The self-hosted code is available without a software fee. Operating it has separate costs.",
+        "source": "https://github.com/SuiteCRM/SuiteCRM"
+      },
+      "classification": "open-source",
+      "repository_url": "https://github.com/SuiteCRM/SuiteCRM",
+      "license": {
+        "name": "AGPL-3.0",
+        "scope": "The SuiteCRM code in the reviewed repository.",
+        "source": "https://github.com/SuiteCRM/SuiteCRM/blob/hotfix/LICENSE.txt",
+        "osi_source": "https://opensource.org/license/agpl-3.0"
+      },
+      "maintenance": {
+        "status": "Recent repository activity",
+        "source": "https://github.com/SuiteCRM/SuiteCRM",
+        "observed_on": "2026-11-04"
+      },
+      "reviewed_on": "2026-11-19",
+      "guide": "crm.md"
+    },
+    {
+      "id": "hubspot-sales-hub",
+      "name": "HubSpot Sales Hub",
+      "category": "Sales engagement and outreach",
+      "kind": "software",
+      "organization": "HubSpot",
+      "problem": "Coordinate seller tasks and pipeline work. Check the applicable plan before designing any sequence or automated follow-up.",
+      "official_url": "https://www.hubspot.com/products/sales",
+      "difficulty": "Intermediate",
+      "cost": {
+        "model": "Freemium",
+        "note": "Free CRM capabilities and paid sales editions. Sequences require applicable paid access.",
+        "source": "https://www.hubspot.com/products/sales"
+      },
+      "classification": "proprietary",
+      "maintenance": {
+        "status": "Currently offered",
+        "source": "https://www.hubspot.com/products/sales"
+      },
+      "reviewed_on": "2026-11-19",
+      "guide": "lifecycle.md"
+    },
+    {
+      "id": "openai-codex-cli",
+      "name": "OpenAI Codex CLI",
+      "category": "AI agents and coding agents",
+      "kind": "software",
+      "organization": "OpenAI",
+      "problem": "Help a developer inspect a repository and draft workflow changes for review from a terminal.",
+      "official_url": "https://github.com/openai/codex",
+      "difficulty": "Intermediate",
+      "cost": {
+        "model": "Free",
+        "note": "CLI source code. Model and hosted service access are billed or entitled separately.",
+        "source": "https://github.com/openai/codex"
+      },
+      "classification": "open-source",
+      "repository_url": "https://github.com/openai/codex",
+      "license": {
+        "name": "Apache-2.0",
+        "scope": "The CLI repository code. Service terms are separate.",
+        "source": "https://github.com/openai/codex/blob/main/LICENSE",
+        "osi_source": "https://opensource.org/license/apache-2.0"
+      },
+      "maintenance": {
+        "status": "Recent repository activity",
+        "source": "https://github.com/openai/codex",
+        "observed_on": "2026-11-19"
+      },
+      "reviewed_on": "2026-11-19",
+      "guide": "agents.md"
+    },
+    {
+      "id": "openai-agents-sdk-for-python",
+      "name": "OpenAI Agents SDK for Python",
+      "category": "AI agents and coding agents",
+      "kind": "software",
+      "organization": "OpenAI",
+      "problem": "Define tools and handoffs for a Python agent, then inspect traces when evaluating its behavior.",
+      "official_url": "https://github.com/openai/openai-agents-python",
+      "difficulty": "Advanced",
+      "cost": {
+        "model": "Free",
+        "note": "SDK source code. Provider requests and hosting can incur costs.",
+        "source": "https://github.com/openai/openai-agents-python"
+      },
+      "classification": "open-source",
+      "repository_url": "https://github.com/openai/openai-agents-python",
+      "license": {
+        "name": "MIT",
+        "scope": "The Python SDK code in this repository.",
+        "source": "https://github.com/openai/openai-agents-python/blob/main/LICENSE",
+        "osi_source": "https://opensource.org/license/mit"
+      },
+      "maintenance": {
+        "status": "Recent repository activity",
+        "source": "https://github.com/openai/openai-agents-python",
+        "observed_on": "2026-11-19"
+      },
+      "reviewed_on": "2026-11-19",
+      "guide": "agents.md"
+    },
+    {
+      "id": "n8n",
+      "name": "n8n",
+      "category": "Workflow automation",
+      "kind": "software",
+      "organization": "n8n",
+      "problem": "Connect triggers and system actions with editable workflow steps that operators can inspect and replay.",
+      "official_url": "https://github.com/n8n-io/n8n",
+      "difficulty": "Intermediate",
+      "cost": {
+        "model": "Freemium",
+        "note": "Self-hosted community use is subject to the license. Hosted and enterprise options are paid.",
+        "source": "https://n8n.io/pricing/"
+      },
+      "classification": "source-available",
+      "repository_url": "https://github.com/n8n-io/n8n",
+      "license": {
+        "name": "Sustainable Use License and n8n Enterprise License",
+        "scope": "Community self-hosting and enterprise files have separate terms. Review permitted use before operating for third parties.",
+        "source": "https://github.com/n8n-io/n8n/blob/master/LICENSE.md"
+      },
+      "maintenance": {
+        "status": "Recent repository activity",
+        "source": "https://github.com/n8n-io/n8n",
+        "observed_on": "2026-11-19"
+      },
+      "reviewed_on": "2026-11-19",
+      "guide": "workflows.md"
+    },
+    {
+      "id": "node-red",
+      "name": "Node-RED",
+      "category": "Workflow automation",
+      "kind": "software",
+      "organization": "OpenJS Foundation and contributors",
+      "problem": "Wire event sources to small transformation and routing steps using a visual runtime.",
+      "official_url": "https://github.com/node-red/node-red",
+      "difficulty": "Intermediate",
+      "cost": {
+        "model": "Free",
+        "note": "Open-source runtime. Hosting and connected services have separate costs.",
+        "source": "https://github.com/node-red/node-red"
+      },
+      "classification": "open-source",
+      "repository_url": "https://github.com/node-red/node-red",
+      "license": {
+        "name": "Apache-2.0",
+        "scope": "Core Node-RED repository. Check separately installed nodes individually.",
+        "source": "https://github.com/node-red/node-red/blob/main/LICENSE",
+        "osi_source": "https://opensource.org/license/apache-2.0"
+      },
+      "maintenance": {
+        "status": "Recent repository activity",
+        "source": "https://github.com/node-red/node-red",
+        "observed_on": "2026-11-17"
+      },
+      "reviewed_on": "2026-11-19",
+      "guide": "signals.md"
+    },
+    {
+      "id": "metabase",
+      "name": "Metabase",
+      "category": "Revenue analytics",
+      "kind": "software",
+      "organization": "Metabase",
+      "problem": "Publish questions and dashboards over pipeline data, with agreed definitions for cohorts, activity, and funnel stages.",
+      "official_url": "https://www.metabase.com/license",
+      "difficulty": "Intermediate",
+      "cost": {
+        "model": "Freemium",
+        "note": "Free self-hosted open-source edition and paid cloud or enterprise editions.",
+        "source": "https://www.metabase.com/pricing"
+      },
+      "classification": "mixed-license",
+      "repository_url": "https://github.com/metabase/metabase",
+      "license": {
+        "name": "AGPL and Metabase Commercial License",
+        "scope": "The open-source edition and commercial code have different terms. The repository license describes the directory and distribution boundaries.",
+        "source": "https://github.com/metabase/metabase/blob/master/LICENSE.txt"
+      },
+      "maintenance": {
+        "status": "Recent repository activity",
+        "source": "https://github.com/metabase/metabase",
+        "observed_on": "2026-11-19"
+      },
+      "reviewed_on": "2026-11-19",
+      "guide": "learn/pipeline-attribution.md"
+    },
+    {
+      "id": "customerio",
+      "name": "Customer.io",
+      "category": "Customer lifecycle systems",
+      "kind": "software",
+      "organization": "Customer.io",
+      "problem": "Use customer events and segments to manage onboarding or retention journeys with documented entry and exit rules.",
+      "official_url": "https://docs.customer.io/messaging/journeys-overview/",
+      "difficulty": "Intermediate",
+      "cost": {
+        "model": "Paid",
+        "note": "The reviewed pricing page offers paid plans. Trial availability does not imply a free plan.",
+        "source": "https://customer.io/pricing"
+      },
+      "classification": "proprietary",
+      "maintenance": {
+        "status": "Currently offered",
+        "source": "https://docs.customer.io/messaging/journeys-overview/"
+      },
+      "reviewed_on": "2026-11-19",
+      "guide": "lifecycle.md"
+    },
+    {
+      "id": "jq",
+      "name": "jq",
+      "category": "Libraries and CLIs",
+      "kind": "software",
+      "organization": "jqlang contributors",
+      "problem": "Inspect and transform JSON events or lab output without manually editing large fixtures.",
+      "official_url": "https://github.com/jqlang/jq",
+      "difficulty": "Beginner",
+      "cost": {
+        "model": "Free",
+        "note": "The command-line program.",
+        "source": "https://github.com/jqlang/jq"
+      },
+      "classification": "open-source",
+      "repository_url": "https://github.com/jqlang/jq",
+      "license": {
+        "name": "MIT",
+        "scope": "The jq program. The repository notice identifies separately licensed documentation and dependencies.",
+        "source": "https://github.com/jqlang/jq/blob/master/COPYING",
+        "osi_source": "https://opensource.org/license/mit"
+      },
+      "maintenance": {
+        "status": "Recent repository activity",
+        "source": "https://github.com/jqlang/jq",
+        "observed_on": "2026-11-02"
+      },
+      "reviewed_on": "2026-11-19",
+      "guide": "labs.md"
+    },
+    {
+      "id": "gtm-ai-buyer-readiness",
+      "name": "GTM AI Buyer Readiness",
+      "category": "Libraries and CLIs",
+      "kind": "software",
+      "organization": "Useful in Practice",
+      "problem": "Audit published buyer-facing HTML, structured data, feeds, and advertised capability information with offline sample reports.",
+      "official_url": "https://github.com/stephenstilwell/gtm-ai-buyer-readiness",
+      "difficulty": "Intermediate",
+      "cost": {
+        "model": "Free",
+        "note": "Repository and offline examples. Live use requires permission to crawl the target.",
+        "source": "https://github.com/stephenstilwell/gtm-ai-buyer-readiness"
+      },
+      "classification": "open-source",
+      "repository_url": "https://github.com/stephenstilwell/gtm-ai-buyer-readiness",
+      "license": {
+        "name": "MIT",
+        "scope": "Repository code and its audit implementation.",
+        "source": "https://github.com/stephenstilwell/gtm-ai-buyer-readiness/blob/main/LICENSE",
+        "osi_source": "https://opensource.org/license/mit"
+      },
+      "maintenance": {
+        "status": "Recent repository activity",
+        "source": "https://github.com/stephenstilwell/gtm-ai-buyer-readiness",
+        "observed_on": "2026-11-19"
+      },
+      "reviewed_on": "2026-11-19",
+      "guide": "build/commerce.md"
+    },
+    {
+      "id": "anthropic-skill-creator",
+      "name": "Anthropic Skill Creator",
+      "category": "Agent skills",
+      "kind": "software",
+      "organization": "Anthropic",
+      "problem": "Study how a reusable skill packages instructions and evaluation for a repeatable agent task.",
+      "official_url": "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
+      "difficulty": "Advanced",
+      "cost": {
+        "model": "Free",
+        "note": "Example skill source. Runtime and model access are separate.",
+        "source": "https://github.com/anthropics/skills"
+      },
+      "classification": "open-source",
+      "repository_url": "https://github.com/anthropics/skills",
+      "license": {
+        "name": "Apache-2.0",
+        "scope": "The named skill under skills/skill-creator. Review licensing of other folders and the runtime individually.",
+        "source": "https://github.com/anthropics/skills/blob/main/skills/skill-creator/LICENSE.txt",
+        "osi_source": "https://opensource.org/license/apache-2.0"
+      },
+      "maintenance": {
+        "status": "Recent repository activity",
+        "source": "https://github.com/anthropics/skills",
+        "observed_on": "2026-11-16"
+      },
+      "reviewed_on": "2026-11-19",
+      "guide": "agents.md"
+    },
+    {
+      "id": "hubspot-revenue-operations-certification",
+      "name": "HubSpot Revenue Operations Certification",
+      "category": "Courses",
+      "kind": "learning",
+      "organization": "HubSpot Academy",
+      "problem": "Learn the vocabulary of revenue operations and relate process ownership to a real handoff.",
+      "official_url": "https://academy.hubspot.com/courses/revenue-operations",
+      "difficulty": "Beginner",
+      "classification": "learning-resource",
+      "cost": {
+        "model": "Free",
+        "note": "Free course with a HubSpot Academy account.",
+        "source": "https://academy.hubspot.com/courses/revenue-operations"
+      },
+      "maintenance": {
+        "status": "Currently offered",
+        "source": "https://academy.hubspot.com/courses/revenue-operations"
+      },
+      "reviewed_on": "2026-11-19",
+      "guide": "revops.md"
+    },
+    {
+      "id": "useful-in-practice-letter",
+      "name": "Useful in Practice Letter",
+      "category": "Newsletters",
+      "kind": "learning",
+      "organization": "Stephen Stilwell",
+      "problem": "Find practical software and workflow examples from the maintainer’s independent publication.",
+      "official_url": "https://stephenstilwell.com/",
+      "difficulty": "Beginner",
+      "classification": "learning-resource",
+      "cost": {
+        "model": "Free",
+        "note": "Free email subscription offered on the publication home page.",
+        "source": "https://stephenstilwell.com/"
+      },
+      "maintenance": {
+        "status": "Currently offered",
+        "source": "https://stephenstilwell.com/"
+      },
+      "reviewed_on": "2026-11-19",
+      "guide": "fundamentals.md"
+    },
+    {
+      "id": "dbt-community",
+      "name": "dbt Community",
+      "category": "Technical communities",
+      "kind": "learning",
+      "organization": "dbt Labs and community contributors",
+      "problem": "Ask practitioners about analytics engineering, testing conventions, or modeling a reliable reporting table.",
+      "official_url": "https://www.getdbt.com/community",
+      "difficulty": "Intermediate",
+      "classification": "learning-resource",
+      "cost": {
+        "model": "Free",
+        "note": "Free community access. Some related events and vendor services have separate pricing.",
+        "source": "https://www.getdbt.com/community/join-the-community"
+      },
+      "maintenance": {
+        "status": "Currently offered",
+        "source": "https://www.getdbt.com/community"
+      },
+      "reviewed_on": "2026-11-19",
+      "guide": "learn/pipeline-attribution.md"
+    },
+    {
+      "id": "microsoft-experimentation-platform",
+      "name": "Microsoft Experimentation Platform",
+      "category": "Researchers and educators",
+      "kind": "learning",
+      "organization": "Microsoft Research",
+      "problem": "Read original studies about metric interpretation, experiment design, and assignment defects.",
+      "official_url": "https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/publications/",
+      "difficulty": "Advanced",
+      "classification": "learning-resource",
+      "cost": {
+        "model": "Free",
+        "note": "Public bibliography. Individual publications may have their own access terms.",
+        "source": "https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/publications/"
+      },
+      "maintenance": {
+        "status": "Published reference",
+        "source": "https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/publications/"
+      },
+      "reviewed_on": "2026-11-19",
+      "guide": "measurement.md"
+    },
+    {
+      "id": "nist-ai-rmf-playbook",
+      "name": "NIST AI RMF Playbook",
+      "category": "Templates and playbooks",
+      "kind": "learning",
+      "organization": "NIST",
+      "problem": "Turn AI risk management into concrete oversight, documentation, and evidence questions.",
+      "official_url": "https://www.nist.gov/itl/ai-risk-management-framework/nist-ai-rmf-playbook",
+      "difficulty": "Intermediate",
+      "classification": "learning-resource",
+      "cost": {
+        "model": "Free",
+        "note": "Public reference and playbook.",
+        "source": "https://www.nist.gov/itl/ai-risk-management-framework/nist-ai-rmf-playbook"
+      },
+      "maintenance": {
+        "status": "Published reference",
+        "source": "https://www.nist.gov/itl/ai-risk-management-framework/nist-ai-rmf-playbook"
+      },
+      "reviewed_on": "2026-11-19",
+      "guide": "governance.md"
+    },
+    {
+      "id": "cloudevents-specification",
+      "name": "CloudEvents Specification",
+      "category": "Official documentation",
+      "kind": "learning",
+      "organization": "CloudEvents project",
+      "problem": "Define the event envelope and explain why source and ID together identify a delivery for replay purposes.",
+      "official_url": "https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md",
+      "difficulty": "Intermediate",
+      "classification": "learning-resource",
+      "cost": {
+        "model": "Free",
+        "note": "Public versioned specification.",
+        "source": "https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md"
+      },
+      "maintenance": {
+        "status": "Published reference",
+        "source": "https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md"
+      },
+      "reviewed_on": "2026-11-19",
+      "guide": "signals.md"
+    },
+    {
+      "id": "opentelemetry-signals",
+      "name": "OpenTelemetry Signals",
+      "category": "Official documentation",
+      "kind": "learning",
+      "organization": "OpenTelemetry project",
+      "problem": "Choose traces, metrics, and logs that reveal whether a commercial handoff is working.",
+      "official_url": "https://opentelemetry.io/docs/concepts/signals/",
+      "difficulty": "Intermediate",
+      "classification": "learning-resource",
+      "cost": {
+        "model": "Free",
+        "note": "Public documentation.",
+        "source": "https://opentelemetry.io/docs/concepts/signals/"
+      },
+      "maintenance": {
+        "status": "Published reference",
+        "source": "https://opentelemetry.io/docs/concepts/signals/"
+      },
+      "reviewed_on": "2026-11-19",
+      "guide": "learn/systems.md"
+    }
+  ]
+}

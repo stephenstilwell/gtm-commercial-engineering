@@ -1,12 +1,25 @@
 site_name: GTM Commercial Engineering
-site_description: An open field guide to building reliable commercial systems.
-site_author: Useful in Practice and contributors
+site_description: An open handbook for GTM engineering, RevOps, and commercial systems.
+site_author: Stephen Stilwell and contributors
 site_url: !ENV SITE_URL
+repo_name: GitHub
+repo_url: https://github.com/stephenstilwell/gtm-commercial-engineering
+copyright: A Useful in Practice publication · Original documentation licensed CC BY 4.0
 
 theme:
   name: material
   font: false
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Use dark color scheme
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Use light color scheme
   features:
+    - navigation.tabs
     - navigation.sections
     - navigation.top
     - search.suggest
@@ -16,8 +29,12 @@ theme:
 plugins:
   - search
 
+extra_css:
+  - stylesheets/publication.css
+
 markdown_extensions:
   - tables
+  - md_in_html
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.superfences:
@@ -33,28 +50,41 @@ validation:
 
 nav:
   - Home: index.md
-  - Start learning:
+  - Learn:
       - Learning roadmap: roadmap.md
-      - Offline labs: labs.md
-      - Operational checklists: checklists.md
-  - Commercial systems:
+      - Learning resources: learn/resources.md
       - GTM engineering fundamentals: fundamentals.md
+      - Model a commercial system: learn/systems.md
       - Revenue operations architecture: revops.md
       - CRM data models and enrichment: crm.md
-  - Workflow engineering:
       - Buying signals and event-driven workflows: signals.md
-      - n8n, Clay, Apollo, and HubSpot: workflows.md
       - Customer lifecycle engineering: lifecycle.md
-  - Intelligence:
+      - AI agents for business operations: agents.md
+      - Pipeline measurement and attribution: learn/pipeline-attribution.md
+      - Measurement, experimentation, and ROI: measurement.md
+      - Security, compliance, and data governance: governance.md
+  - Explore:
+      - Category index: explore/index.md
+      - Tool catalog: explore/catalog.md
+  - Build:
+      - Workflow examples: build/index.md
+      - Signal-to-opportunity routing: build/routing.md
+      - Evidence and review pipelines: build/evidence.md
+      - Lifecycle monitoring and measurement: build/lifecycle.md
+      - Validate offers for AI-assisted buying: build/commerce.md
+      - Offline lab interface: labs.md
+      - n8n, Clay, Apollo, and HubSpot: workflows.md
+      - Operational checklists: checklists.md
+  - Research:
+      - Research agenda: research/index.md
+      - Evidence freshness and oversight: research/evidence.md
+      - Lifecycle autonomy and replays: research/lifecycle.md
+      - Buyer readiness and agent-to-agent commerce: research/commerce.md
       - Partnership intelligence: partnerships.md
       - Product-market intelligence: product-market.md
       - Vertical opportunity intelligence: verticals.md
-  - AI and commerce:
-      - AI agents for business operations: agents.md
       - Agentic commerce and AI buyer readiness: commerce.md
-  - Operating controls:
-      - Security, compliance, and data governance: governance.md
-      - Measurement, experimentation, and ROI: measurement.md
-  - References:
+  - Project:
       - Primary sources: resources.md
       - Resource review: resource-review.md
+      - Handbook expansion audit: maintainer/handbook-audit.md

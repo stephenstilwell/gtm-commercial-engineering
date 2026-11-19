@@ -1,8 +1,24 @@
 # Contributing
 
-## Submit a resource
+## Start with an issue
 
-Select **Resource submission** in GitHub’s **New issue** menu. Include the canonical URL, publisher, topic, concrete learner task, date checked, and access or licensing constraints. Eligible primary sources include official specifications, vendor documentation, original research, and government datasets.
+| What you want to share | Choose |
+| --- | --- |
+| A course, reference, community, or other useful resource | **Resource submission** |
+| A changed plan or license, an outdated guide, or a quarterly review | **Resource review** |
+| An instructional walkthrough | **Tutorial proposal** |
+| A project with public software license evidence | **Open-source project submission** |
+| A workflow with a business problem and expected output | **Technical example request** |
+
+Include a canonical URL, publisher, concrete learner task, date checked, and any access or licensing constraints. Cite primary references when the submission supports a substantive claim.
+
+## Update the catalog
+
+Edit [catalog.json](catalog/catalog.json), then run `python scripts/catalog.py` to regenerate the two Markdown views. Keep both output pages in the pull request. Use the [catalog schema](catalog/catalog.schema.json) to check required fields and controlled values. Reuse an existing entry if a product solves several problems.
+
+For software, record the reviewed component or edition, the maintainer, official cost and activity evidence, and an existing guide. If classifying it as open-source, check the exact upstream license and the applicable OSI listing. Record enterprise boundaries for mixed-license or source-available repositories. Record the public activity date when available. Treat repository activity as a point-in-time observation.
+
+The reviewer opens sources, checks the license and edition scope, reconciles the problem statement with current documentation, and confirms that the linked exercise fits. Automated schema and link checks give reviewers a consistent baseline.
 
 ## Improve a guide or lab
 
@@ -13,12 +29,13 @@ Select **Resource submission** in GitHub’s **New issue** menu. Include the can
 5. In the pull request, summarize the learner outcome, verification performed, and any vendor-specific step still pending. Submitted material is intended for distribution under the applicable [repository licenses](LICENSING.md). Include attribution for material you have permission to reuse.
 
 ```sh
-python -m unittest discover -s tests -v
 python -m pip install -r requirements-docs.txt
+python scripts/catalog.py --check
+python -m unittest discover -s tests -v
 python -m mkdocs build --strict
 ```
 
-The site build validates internal links and anchors. CI also checks Markdown URLs with Lychee. Review changed diagrams visually and check that the cited material supports the text.
+The site build validates internal links and anchors. CI also checks Markdown URLs with Lychee. Review responsive navigation, keyboard focus, search, and changed diagrams in the rendered site. Verify that cited material supports the text.
 
 ## Publish the documentation
 

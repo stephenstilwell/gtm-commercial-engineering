@@ -1,15 +1,32 @@
 # GTM Commercial Engineering
 
-An open field guide from Useful in Practice for people who design, build, and operate commercial systems.
+An open engineering handbook from Useful in Practice. Learn how commercial systems turn data into accountable decisions, how to build workflows you can test, and how to tell whether they improve outcomes.
 
-Use the [learning roadmap](roadmap.md) to choose a starting point, or find a guide in the navigation and run its exercise in the [offline lab](labs.md).
+<div class="grid cards handbook-paths" markdown>
 
-| What do you need to do? | Start here |
-| --- | --- |
-| Map a manual handoff and choose the first useful automation | [GTM engineering fundamentals](fundamentals.md) |
-| Route a signal to an owned task | [Buying signals](signals.md) |
-| Preserve CRM identity and field ownership | [CRM and enrichment](crm.md) |
-| Evaluate a research agent with a review gate | [AI agents](agents.md) |
-| Work out whether a workflow paid for itself | [Measurement and ROI](measurement.md) |
+- **[Learn](roadmap.md)**
+  Pick a path through GTM foundations, CRM, events, experimentation, and AI oversight.
+- **[Explore](explore/index.md)**
+  Find tools by the problem they solve, with access, licensing, and review evidence.
+- **[Build](build/index.md)**
+  Run a synthetic workflow and see its decisions change during replay, review, and recovery.
+- **[Research](research/index.md)**
+  Test hypotheses about autonomous workflows, lifecycle intelligence, and AI buyer readiness.
 
-Use the [checklists](checklists.md) at design and launch review. The [resource index](resources.md) records the most recent verification dates. Original prose and diagrams are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+</div>
+
+## Run your first example
+
+From the repository root with Python 3.11+:
+
+```sh
+python examples/gtm_lab.py routing
+```
+
+Follow the [signal-to-opportunity walkthrough](build/routing.md) to inspect the synthetic task proposals. The [checklists](checklists.md) cover design and launch review.
+
+## Contribute
+
+Suggest a tool, propose a tutorial, or report outdated guidance in the GitHub repository. Start with the [resource review process](resource-review.md) and see the [inspiration and related projects](maintainer/handbook-audit.md#inspiration-and-related-projects).
+
+Maintained by Stephen Stilwell. [Useful in Practice](https://stephenstilwell.com/) · [Documentation license](https://creativecommons.org/licenses/by/4.0/)

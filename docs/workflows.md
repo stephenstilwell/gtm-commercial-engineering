@@ -2,6 +2,8 @@
 
 One practical arrangement uses n8n for orchestration, Clay for enrichment waterfalls, Apollo for a scoped candidate search or enrichment step, and HubSpot as the CRM. Define the interface between each tool before connecting them. Inputs should include identifiers and purpose, while outputs should preserve provenance, match state, and the fields the consumer can use.
 
+The included n8n Code node decision logic was executed locally. The editor import and account-dependent pilot below require verification in the reader’s approved test environment.
+
 ## Reference architecture
 
 ```mermaid

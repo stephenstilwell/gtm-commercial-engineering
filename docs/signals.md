@@ -19,7 +19,7 @@ flowchart LR
 
 1. Compare `examples/config/signal.schema.json` with one event in `examples/fixtures/routing.json`. The lab uses a constrained CloudEvents envelope. The producer's `source` and `id` form the duplicate key.
 2. Run `python examples/gtm_lab.py routing`. Seven deliveries yield one duplicate and two proposed tasks. Locate the signal held for being outside its freshness window.
-3. Copy the fixture folder, duplicate one of the accepted deliveries, and pass the copy via `--fixtures PATH`. Duplicate count increases while decision and task counts remain stable.
+3. Copy the fixture folder, duplicate one of the accepted deliveries, and pass the copy via `--fixtures PATH`. Duplicate count increases while decision and task counts remain stable. Change the subject and reuse the same source and ID. The lab reports a payload conflict and preserves the first decision. Treat identity reuse as a producer incident and reconcile any completed effects.
 4. Design the live adapter. Verify the delivery signature where supported, persist intake before acknowledging, and commit the decision plus an outbox row in one transaction. The outbox worker sends the agreed action, records its remote ID, and checks for an existing effect before retrying an uncertain result. Use a downstream idempotency key where the endpoint supports one.
 
 Use bounded exponential backoff with jitter for transient errors and a dead-letter queue for exhausted or invalid events. Keep deduplication history long enough for the supported replay window. Monitor event age and the oldest unsettled action.
